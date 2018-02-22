@@ -16,11 +16,11 @@ class User < ApplicationRecord
     puts '-------------------------------------'
     where(uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      #user.password = Devise.friendly_token[0,20]
       user.username = auth.info.name
       user.image_url = auth.info.image
       user.token = auth.credentials.token
-      user.data['omniauth_info'] = auth
+      #user.data['omniauth_info'] = auth
     end
   end
 
