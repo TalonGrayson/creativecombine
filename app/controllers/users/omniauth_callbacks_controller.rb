@@ -1,4 +1,9 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
+  def index
+    @response = request.body.read
+  end
+
   def twitch
     puts "Callback triggered"
     # You need to implement the method below in your model (e.g. app/models/user.rb)
