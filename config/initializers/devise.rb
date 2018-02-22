@@ -285,5 +285,5 @@ Devise.setup do |config|
     client_secret = '6se4tsukexxgcnad2zlmsca0czrtzx'
   end
 
-  config.omniauth :twitch, client_id, client_secret, scope: 'user:read:email'
+  config.omniauth :twitch, client_id, client_secret, scope: 'user:edit'
 end
