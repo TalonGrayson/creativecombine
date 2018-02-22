@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated :user do
-      root to: 'users/sessions#new', as: :unauthenticated_root
+      root to: 'pages#index', as: :unauthenticated_root
     end
 
     get '/users/sign_out' => 'users/sessions#destroy'
