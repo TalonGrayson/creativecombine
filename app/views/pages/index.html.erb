@@ -1,11 +1,11 @@
-<div class="centered" style="margin-top: 50px; z-index:-1;">
+<div class="centered" style="margin-top: 50px;">
   <div>
-    <%= link_to 'https://go.twitch.tv/communities/creativecombine/details' do %>
-        <%= image_tag 'CreativeCombine_Logo_WithShadow_01.png', alt: 'Creative Combine Logo', class: 'image-link', target: '_blank' %>
-    <% end %>
+    <%= image_tag 'CreativeCombine_Logo_WithShadow_01', alt: 'Creative Combine Logo' %>
   </div>
 </div>
 
 <div class="centered white-text" style="margin-top: -150px; z-index: 5;">
-  Hello, <%= current_user.username %>!
+  <%= image_tag current_user.image_url %> <%= current_user.username %><br />
+  <br />
+  One of us...
 </div>
