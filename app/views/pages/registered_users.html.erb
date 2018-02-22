@@ -1,0 +1,28 @@
+<div class="centered white-text">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>
+          Logo
+        </td>
+        <td>
+          Name
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% User.each do |u| %>
+
+      <tr>
+        <td>
+          <%= image_tag u.image_url, class: 'logo-s' %><!---->
+        </td>
+        <td>
+          <%= u.username %>
+        </td>
+      </tr>
+
+      <% end %>
+    </tbody>
+  </table>
+</div>

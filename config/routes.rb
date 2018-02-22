@@ -22,5 +22,5 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy'
   end
 
-
+  get 'pages#registered_users'
 end

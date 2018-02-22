@@ -3,4 +3,7 @@ class PagesController < ApplicationController
   def index
     puts "Index showing"
   end
+
+  def registered_users
+  end
 end
