@@ -277,5 +277,13 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  config.omniauth :twitch, 'mx4pqqjw18td29vbekx8qs23vbvfsf', '6se4tsukexxgcnad2zlmsca0czrtzx', scope: 'user:read:email'
+  if Rails.env.production?
+    client_id = 'uuq05yn3ai22vqcdzqhvqzi14l0pra'
+    client_secret = '84o24kxg50hhg2nyilrx8wy5yj1l1n'
+  else
+    client_id = 'mx4pqqjw18td29vbekx8qs23vbvfsf'
+    client_secret = '6se4tsukexxgcnad2zlmsca0czrtzx'
+  end
+
+  config.omniauth :twitch, client_id, client_secret, scope: 'user:read:email'
 end
