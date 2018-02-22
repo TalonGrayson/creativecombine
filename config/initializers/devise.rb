@@ -278,9 +278,12 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   if Rails.env.production?
+    client_id = 'ndbbi36k56etdnmdmynb19bntfszgm'
+    client_secret = '2mftc8hu241nbn3qi8ra365t9whagp'
+  elsif Rails.env.staging?
     client_id = 'uuq05yn3ai22vqcdzqhvqzi14l0pra'
     client_secret = '84o24kxg50hhg2nyilrx8wy5yj1l1n'
-  else
+  else # localhost
     client_id = 'mx4pqqjw18td29vbekx8qs23vbvfsf'
     client_secret = '6se4tsukexxgcnad2zlmsca0czrtzx'
   end
