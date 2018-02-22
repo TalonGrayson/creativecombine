@@ -15,8 +15,8 @@ class User < ApplicationRecord
     puts "Token: " + auth.uid.to_s
     puts '-------------------------------------'
     where(uid: auth.uid).first_or_create do |user|
+      user.password = Devise.friendly_token[0,20] # Because it can't be blank..
       user.email = auth.info.email
-      #user.password = Devise.friendly_token[0,20]
       user.username = auth.info.name
       user.image_url = auth.info.image
       user.token = auth.credentials.token
