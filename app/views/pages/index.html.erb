@@ -1,4 +1,4 @@
-<div class="centered" style="margin-top: 50px;">
+<div class="centered" style="margin-top: 50px; z-index:-1;">
   <div>
     <%= link_to 'https://go.twitch.tv/communities/creativecombine/details' do %>
         <%= image_tag 'CreativeCombine_Logo_WithShadow_01.png', alt: 'Creative Combine Logo', class: 'image-link', target: '_blank' %>
@@ -7,9 +7,5 @@
 </div>
 
 <div class="centered white-text" style="margin-top: -150px; z-index: 5;">
-  <% if user_signed_in? %>
-      Hello, <%= @user.username %>
-  <% else %>
-      <%= link_to "Sign in with Twitch", user_twitch_omniauth_authorize_path %>
-  <% end %>
+  Hello, <%= @user.username %>
 </div>

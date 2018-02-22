@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  before_action :authenticate_user!
 
   def index
     @response = request.body.read
