@@ -10,6 +10,6 @@
   <% if user_signed_in? %>
       Hello, <%= @user.username %>
   <% else %>
-      Please sign in, yo!
+      <%= link_to "Sign in with Twitch", user_twitch_omniauth_authorize_path %>
   <% end %>
 </div>

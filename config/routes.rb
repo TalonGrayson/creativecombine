@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       registrations: 'users/registrations',
       sessions: 'users/sessions',
       shared: 'users/shared',
-      unlocks: 'users/unlocks'
+      unlocks: 'users/unlocks',
+      omniauth_callbacks: 'users/omniauth_callbacks'
   }
   root to: 'pages#index'
 end
