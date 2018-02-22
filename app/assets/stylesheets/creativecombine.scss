@@ -1,0 +1,67 @@
+@mixin transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(to bottom, #1f0049 0%,#000000 25%,#35007d 75%);
+  background: -webkit-linear-gradient(top, #1f0049 0%,#000000 25%,#35007d 75%);
+  background: -moz-linear-gradient(top, #1f0049 0%, #000000 25%, #35007d 75%);
+
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.notice {
+  color: white;
+}
+
+.alert {
+  color: white;
+}
+
+.front {
+  margin-top: -150px;
+  z-index: 99;
+  opacity: 0.5;
+}
+
+.image-link {
+  @include transition;
+
+  opacity: 0.3;
+  -webkit-filter: blur(0.3);
+  filter: blur(0.3);
+
+  &:hover, &.hover {
+    opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+
+.twitch-button {
+  background-color: #6441A4;
+  color: white;
+  vertical-align: middle;
+
+  &:hover, &.hover {
+    color: white;
+  }
+
+}
+
+.white-text {
+  color: white;
+}
