@@ -277,10 +277,10 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  if Rails.env.production?
+  if ENV['CC_ENV'] == 'production'
     client_id = 'ndbbi36k56etdnmdmynb19bntfszgm'
     client_secret = '2mftc8hu241nbn3qi8ra365t9whagp'
-  elsif Rails.env.staging?
+  elsif ENV['CC_ENV'] == 'development'
     client_id = 'uuq05yn3ai22vqcdzqhvqzi14l0pra'
     client_secret = '84o24kxg50hhg2nyilrx8wy5yj1l1n'
   else # localhost
