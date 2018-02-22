@@ -7,9 +7,9 @@
 </div>
 
 <div class="centered white-text" style="margin-top: -150px; z-index: 5;">
-  <!--% if user_signed_in? %-->
-      Hello, you!<!--%= @user.username %-->
-  <!--% else %>
+  <% if user_signed_in? %>
+      Hello, <%= @user.username %>
+  <% else %>
       Please sign in, yo!
-  <!--% end %-->
+  <% end %>
 </div>
