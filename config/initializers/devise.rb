@@ -280,13 +280,15 @@ Devise.setup do |config|
   if ENV['CC_ENV'] == 'production'
     client_id = 'ndbbi36k56etdnmdmynb19bntfszgm'
     client_secret = '2mftc8hu241nbn3qi8ra365t9whagp'
+    config.omniauth :twitch, client_id, client_secret
   elsif ENV['CC_ENV'] == 'development'
     client_id = 'uuq05yn3ai22vqcdzqhvqzi14l0pra'
     client_secret = '84o24kxg50hhg2nyilrx8wy5yj1l1n'
+    config.omniauth :twitch, client_id, client_secret
   else # localhost
     client_id = 'mx4pqqjw18td29vbekx8qs23vbvfsf'
     client_secret = '6se4tsukexxgcnad2zlmsca0czrtzx'
+    config.omniauth :twitch, client_id, client_secret, client_options: { ssl: { ca_file: '/usr/lib/ssl/certs/ca-certificates.crt' } }
   end
 
-  config.omniauth :twitch, client_id, client_secret #, scope: 'user_read'
 end
