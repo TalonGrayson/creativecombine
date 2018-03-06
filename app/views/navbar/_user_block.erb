@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+    <div class="user-block-container">
+      <div class="flex-col">
+        <div class="flex-row">
+          <%= current_user.username %> <%= image_tag current_user.image_url, width: '20px', height: '20px' %>
+        </div>
+        <div class="flex-row-end">
+          <%= link_to destroy_user_session_path do %><i class="fas fa-sign-out-alt white-text" title="Sign Out"></i><% end %>
+        </div>
+      </div>
+    </div>
+<% end %>

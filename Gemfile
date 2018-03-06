@@ -8,7 +8,8 @@ end
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'pg', '~> 0.20.0'
-gem 'omniauth-twitch'
+#gem 'omniauth-twitch-helix'
+gem 'omniauth-twitch', github: 'paladinsoftware/omniauth-twitch-helix'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
