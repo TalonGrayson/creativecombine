@@ -45,7 +45,7 @@ class User < ApplicationRecord
     self.email = auth.info.email
     self.username = auth.info.name
     self.image_url = auth.info.image_url
-    self.broadcaster_type = auth.extra.raw_info.data[0].broadcaster_type
+    self.broadcaster_type = auth.extra.raw_info.data[0].broadcaster_type #"", "affiliate" or "partner"
     self.description = auth.info.description
     self.save!
   end
