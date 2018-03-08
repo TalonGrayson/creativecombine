@@ -21,11 +21,33 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.username = auth.info.name
       user.image_url = auth.info.image_url
+      user.broadcaster_type = auth.extra.raw_info.data[0].broadcaster_type
+      user.description = auth.info.description
       user.token = auth.credentials.token
       #NEED TO ADD:
-      #user.broadcaster_type = auth.raw_info.data.broadcaster_type
       #user.data['omniauth_info'] = auth
     end
+=begin
+    if User.exists?(uid: auth.uid)
+      user = User.find_by_uid(auth.uid)
+      puts("Updating " + user.username.to_s)
+
+      user.assign_attributes(email: auth.info.email,
+                  username: auth.info.name,
+                  image_url: auth.info.image_url,
+                  broadcaster_type: auth.extra.raw_info.data[0].broadcaster_type,
+                  description: auth.info.description)
+    end
+=end
+  end
+
+  def update_user_info(auth)
+    self.email = auth.info.email
+    self.username = auth.info.name
+    self.image_url = auth.info.image_url
+    self.broadcaster_type = auth.extra.raw_info.data[0].broadcaster_type
+    self.description = auth.info.description
+    self.save!
   end
 
 end

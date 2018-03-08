@@ -1,6 +1,11 @@
 <div class="centered white-text">
   <p>Welcome to Creative Combine's website!</p>
-  <p>There is nothing here yet, but you're welcome to stay for as long as you please.</p>
-  <br />
+  <p>There is nothing here yet, but you're welcome to stay for as long as you please.<br />
+  These are the details we have in your profile:</p>
+  <div class="small">
+    Email: <%= current_user.email %><br />
+    Broadcaster Type: <%= current_user.broadcaster_type %><br />
+    Description: <%= current_user.description %><br />
+  </div><br />
   <%= image_tag 'CreativeCombine_Logo_WithShadow_01.png' %>
 </div>
