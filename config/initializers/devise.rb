@@ -15,11 +15,11 @@ Devise.setup do |config|
   if ENV['CC_ENV'] == 'production'
     client_id = 'ndbbi36k56etdnmdmynb19bntfszgm'
     client_secret = '2mftc8hu241nbn3qi8ra365t9whagp'
-    config.omniauth :twitch, client_id, client_secret, scope:['user:edit', 'user:read:email']
+    config.omniauth :twitch, client_id, client_secret, scope:"user:read:email"
   elsif ENV['CC_ENV'] == 'development'
     client_id = 'uuq05yn3ai22vqcdzqhvqzi14l0pra'
     client_secret = '84o24kxg50hhg2nyilrx8wy5yj1l1n'
-    config.omniauth :twitch, client_id, client_secret, scope:['user:edit', 'user:read:email']
+    config.omniauth :twitch, client_id, client_secret, scope:"user:read:email"
   else # localhost
     client_id = 'mx4pqqjw18td29vbekx8qs23vbvfsf'
     client_secret = '6se4tsukexxgcnad2zlmsca0czrtzx'
