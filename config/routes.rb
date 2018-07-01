@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get 'registered_users' => 'pages#registered_users'
 
+  post 'receive_webhooks', to: "webhooks#receive"
+
 end
