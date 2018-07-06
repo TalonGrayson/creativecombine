@@ -16,7 +16,7 @@ development:
   timeout: 5000
   database: creativecombine
   username: postgres
-  password: ....
+  password: letmein
   host: localhost
   encoding: utf8
   port: 5432
@@ -29,7 +29,7 @@ test:
   timeout: 5000
   database: creativecombine
   username: postgres
-  password: ....
+  password: letmein
   host: localhost
   encoding: utf8
   port: 5432

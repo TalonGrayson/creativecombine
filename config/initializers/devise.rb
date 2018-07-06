@@ -12,18 +12,8 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
 
-  if ENV['CC_ENV'] == 'production'
-    client_id = 'ndbbi36k56etdnmdmynb19bntfszgm'
-    client_secret = '2mftc8hu241nbn3qi8ra365t9whagp'
-    config.omniauth :twitch, client_id, client_secret, scope:"user:read:email"
-  elsif ENV['CC_ENV'] == 'development'
-    client_id = 'uuq05yn3ai22vqcdzqhvqzi14l0pra'
-    client_secret = '84o24kxg50hhg2nyilrx8wy5yj1l1n'
-    config.omniauth :twitch, client_id, client_secret, scope:"user:read:email"
-  else # localhost
-    client_id = 'mx4pqqjw18td29vbekx8qs23vbvfsf'
-    client_secret = '6se4tsukexxgcnad2zlmsca0czrtzx'
-    config.omniauth :twitch, client_id, client_secret, scope:"user:read:email", client_options: { ssl: { ca_file: '/usr/lib/ssl/certs/ca-certificates.crt' } }
-  end
+  client_id = ENV['TWITCH_CLIENT_ID'] || 'd755yfd6jecj9e8j6bpdqgq7d883z9'
+  client_secret = ENV['TWITCH_CLIENT_SECRET'] || 'qvvgsw2iki4wxz3kckvr92ke7fm5tw'
+  config.omniauth :twitch, client_id, client_secret, scope:"user:read:email", client_options: { ssl: { ca_file: '/usr/lib/ssl/certs/ca-certificates.crt' } }
 
 end

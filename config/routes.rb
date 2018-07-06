@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   post 'receive_webhooks', to: "webhooks#receive"
 
+  get 'twitch_webhook_subscribe' => 'webhooks#twitch_subscribe'
+
 end
